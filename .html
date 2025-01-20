@@ -1,0 +1,219 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #202020;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        header input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 2px;
+        }
+
+        header .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        header .menu button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .video-info {
+            padding: 10px;
+        }
+
+        .video-info h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .video-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #202020;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header input[type="text"] {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .menu {
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo youtube.png" alt="Logo">
+            <h1>YouTube</h1>
+        </div>
+        <input id="search-bar" type="text" placeholder="Pesquisar...">
+        <div class="menu">
+            <button id="menu-btn">☰</button>
+            <button id="notification-btn">🔔</button>
+            <button id="profile-btn">👤</button>
+        </div>
+    </header>
+
+    <main id="video-list">
+        <div class="video-card">
+            <iframe width="350" height="315" src="https://www.youtube.com/embed/8GdWMuwv66A?si=QzYxnTkOqyzFDU-d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+            <div class="video-info">
+                <h3>Dentro de uma favela na india</h3>
+                <p>Nômade Raiz • 1M visualizações • 1 semana atrás</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <iframe width="350" height="315" src="https://www.youtube.com/embed/wwAgxueqSmU?si=1KfgVDysKvQSKSp2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Sozinho no pior país da asia , Bangladesh</h3>
+                <p>Nômade Raiz • 500K visualizações • 2 dias atrás</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <iframe width="350" height="315" src="https://www.youtube.com/embed/cRmb7id9azc?si=vigc_NNZ5b18jt9u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Visitando o lugar mais quente do mundo</h3>
+                <p>Ruhi Çenet • 200K visualizações • 3 horas atrás</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <iframe width="350" height="315" src="https://www.youtube.com/embed/SgE67ad3MR0?si=0vPqRIs5T53mnsJ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>Visitando a cidade mais fria do mundo </h3>
+                <p>Ruhi Çenet • 800K visualizações • 3 horas atrás</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 YouTube</p>
+    </footer>
+
+    <script>
+        
+        const searchBar = document.getElementById('search-bar');
+        searchBar.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                alert(`Pesquisando por: ${searchBar.value}`);
+            }
+        });
+
+        
+        const menuButton = document.getElementById('menu-btn');
+        menuButton.addEventListener('click', () => {
+            alert('Botão de menu clicado!');
+        });
+
+        
+        const notificationButton = document.getElementById('notification-btn');
+        notificationButton.addEventListener('click', () => {
+            alert('Você tem novas notificações!');
+        });
+
+        
+        const profileButton = document.getElementById('profile-btn');
+        profileButton.addEventListener('click', () => {
+            alert('Botão de perfil clicado!');
+        });
+
+       
+        const videoList = document.getElementById('video-list');
+        function addVideo(title, channel, views, time) {
+            const videoCard = document.createElement('div');
+            videoCard.className = 'video-card';
+            videoCard.innerHTML = `
+                <img src="placeholder.jpg" alt="Miniatura do Vídeo">
+                <div class="video-info">
+                    <h3>${title}</h3>
+                    <p>${channel} • ${views} visualizações • ${time}</p>
+                </div>
+            `;
+            videoList.appendChild(videoCard);
+        }
+
+        
+        addVideo('Novo Título de Vídeo', 'Novo Canal', '1.2M', '1 dia atrás');
+    </script>
+</body>
+</html>
